@@ -21,7 +21,9 @@ app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 
 app.use(bodyParser.text({ type: 'text/html' }))
 
-require("./controllers/burgers_controller.js")(app)
+var router = require("./controllers/burgers_controller.js")
+
+app.use("/", router);
 
 app.listen(PORT, function(){
 
